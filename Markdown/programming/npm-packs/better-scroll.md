@@ -1,9 +1,9 @@
-# Better-Scroll
+### Better-Scroll
 ###### 安装：
 ````javascript
 npm install better-scroll --save
-````
-#### 官网：http://ustbhuangyi.github.io/better-scroll/doc/zh-hans/#better-scroll%20%E6%98%AF%E4%BB%80%E4%B9%88
+````  
+[官网](http://ustbhuangyi.github.io/better-scroll/)  
 
 使用：  
 ````javascript

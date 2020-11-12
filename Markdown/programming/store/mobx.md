@@ -1,6 +1,8 @@
 # Mobx  
 简单、可扩展的状态管理
->[中文官网](https://cn.mobx.js.org/)  
+>[官网](https://mobx.js.org/README.html)  
+>[中文网](https://cn.mobx.js.org/)  
+
 注意： 本文中的store都指的是mobx可观察对象  
 ## 使用
 ````javascript
