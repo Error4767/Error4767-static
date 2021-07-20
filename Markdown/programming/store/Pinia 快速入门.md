@@ -1,14 +1,8 @@
-# Pinia 快速入门
-
-<br />
-
 ## Pinia 是什么?
-Pinia 是一个用于 Vue 的状态管理库，类似 vuex, 是 Vue 的另一种状态管理方案  
+Pinia 是一个用于 Vue 的状态管理库，类似 Vuex, 是 Vue 的另一种状态管理方案  
 Pinia 支持 Vue2 和 Vue3  
 
 > 本文只讲 Pinia 在 Vue3 中的使用, 在 Vue2 中使用略有差异，参考 [官方文档](https://pinia.esm.dev/)
-
-<br />
 
 ## Pinia 优势
 符合直觉，易于学习  
@@ -16,7 +10,7 @@ Pinia 支持 Vue2 和 Vue3
 模块化设计，便于拆分状态  
 
 ## 安装 Pinia
-安装需要 @next 因为 pinia 2 处于 beta 阶段, Pinia 2 是对应 Vue3 的版本
+安装需要 @next 因为 Pinia 2 处于 beta 阶段, Pinia 2 是对应 Vue3 的版本
 ````
 # 使用 npm
 npm install pinia@next
@@ -33,11 +27,7 @@ app.use(createPinia());
 
 ## 核心概念与基本使用
 
-<br />
-
 ### Store
-
-<br />
 
 Store 是一个保存状态和业务逻辑的实体，可以自由读取和写入，并通过导入后在 setup 中使用  
 创建一个 store
@@ -81,16 +71,13 @@ export const useStore = creteStore({
 
 ### Getters
 
-<br />
-
 Pinia 中的 Getters 作用与 Vuex 中的 Getters 相同，但使用略有差异  
 Pinia 中的 Getters 直接在 Store 上读取，形似 Store.xx，就和一般的属性读取一样  
 
-#### 基本使用
+#### Getter基本使用
 >Getter 第一个参数是 state，是当前的状态，也可以使用 this.xx 获取状态  
 >Getter 中也可以访问其他的 Getter， 或者是其他的 Store
-
-Getter 基本使用  
+例子：
 ````javascript
 // 修改 store.js
 import { createStore } from "pinia";
@@ -125,7 +112,7 @@ export const useStore = creteStore({
     // 使用其它 Store
     otherStoreCount(state) {
       // 这里是其他的 Store，调用获取 Store，就和在 setup 中一样
-      const otherStore = useOtherStore()
+      const otherStore = useOtherStore();
       return state.count;
     },
   }
@@ -142,11 +129,11 @@ export const useStore = creteStore({
 });
 ````
 
-<br />
+
 
 ### actions
 Pinia 没有 Mutations，统一在 actions 中操作 state，通过this.xx 访问相应状态  
-虽然可以直接操作 Store，但还是推荐在 action 中操作，保证状态不被意外改变  
+虽然可以直接操作 Store，但还是推荐在 actions 中操作，保证状态不被意外改变  
 action 和普通的函数一样  
 action 同样可以像 Getter 一样访问其他的 Store，同上方式使用其它 Store，这里不在赘述,详细请移步 [官方文档 Actions](https://pinia.esm.dev/core-concepts/actions.html)  
 #### action 基本使用
@@ -170,7 +157,7 @@ export const useStore({
 ````
 
 ## 总结
-Pinia 相比 Vuex 更加简单，但 Pinia 可以自由扩展 [官方文档 Plugins](https://pinia.esm.dev/core-concepts/plugins.html)  
+Pinia 相比 Vuex 更加简单，而且 Pinia 可以自由扩展 [官方文档 Plugins](https://pinia.esm.dev/core-concepts/plugins.html)  
 Pinia 是符合直觉的状态管理方式，让使用者回到了模块导入导出的原始状态，使状态的来源更加清晰可见  
-Pinia 的使用感受类似于 [Recoil](https://recoiljs.org/zh-hans/)，但没有那么多的概念和API，主体非常精简，极易上手（Recoil 是 Facebook 官方出品的用于 React 状态管理库，使用 React Hooks 管理状态）  
+Pinia 的使用感受类似于 [Recoil](https://recoiljs.org/zh-hans/)，但没有那么多的概念和 API，主体非常精简，极易上手（Recoil 是 Facebook 官方出品的用于 React 状态管理库，使用 React Hooks 管理状态）  
 Pinia 2 目前还在 Beta 状态，不建议在生产环境中使用，不过相信稳定了以后会成为 Vue 生态中另一大状态管理方案
