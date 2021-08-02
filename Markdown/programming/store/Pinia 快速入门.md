@@ -33,10 +33,10 @@ Store 是一个保存状态和业务逻辑的实体，可以自由读取和写�
 创建一个 store
 ````javascript
 // store.js
-import { createStore } from "pinia";
+import { defineStore } from "pinia";
 
-// createStore 调用后返回一个函数，调用该函数获得 Store 实体
-export const useStore = creteStore({
+// defineStore 调用后返回一个函数，调用该函数获得 Store 实体
+export const useStore = defineStore({
   // id: 必须的，在所有 Store 中唯一
   id: "myGlobalState",
   // state: 返回对象的函数
@@ -80,11 +80,11 @@ Pinia 中的 Getters 直接在 Store 上读取，形似 Store.xx，就和一般�
 例子：
 ````javascript
 // 修改 store.js
-import { createStore } from "pinia";
+import { defineStore } from "pinia";
 
 import { otherState } from "@/store/otherState.js";
 
-export const useStore = creteStore({
+export const useStore = defineStore({
   id: "myGlobalState",
   state: ()=> ({
     count: 2
@@ -119,9 +119,9 @@ export const useStore = creteStore({
 });
 
 // otherState.js
-import { createStore } from "pinia";
+import { defineStore } from "pinia";
 
-export const useStore = creteStore({
+export const useStore = defineStore({
   id: "otherState",
   state: ()=> ({
     count: 5
