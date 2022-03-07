@@ -186,5 +186,5 @@ assert("表达式");
 这样，无论是在 webpack，rollup，parcel 亦或是其它工具，我们也可以使用 power-assert 了  
 ### 最后
 上面的例子在浏览器中使用比较繁琐  
-您可以 [直接下载](https://api.ecuder.cn/files/dev/PowerAssertBrowser/powerAssertBrowser.js) 已制作完毕的模块用于浏览器  
+您可以 [直接下载](https://api.ecuder.cn/assets/powerAssertBrowser.js) 已制作完毕的模块用于浏览器  
 由于 power-assert 相关工具较少，所以使用起来可能有些麻烦，做好前期处理，在后面就可以愉快地使用了  
